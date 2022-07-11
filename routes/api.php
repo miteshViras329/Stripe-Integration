@@ -18,6 +18,8 @@ Route::group(['prefix' => '/prices', 'controller' => PriceController::class], fu
 });
 
 Route::group(['prefix' => '/payments', 'controller' => PaymentController::class], function () {
-    Route::post('create', 'store');
+    Route::post('checkout', 'checkout');
+    Route::post('subscription', 'subscription');
     Route::get('/{id}', 'show');
+    Route::get('subscription/{id}', 'showSubscription');
 });
